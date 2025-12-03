@@ -15,12 +15,33 @@ public class NewMain {
      */
     public static void main(String[] args) {
         
+        
+   
+        method1();
+                System.out.println("fim do programa");
+       
+      
+      
+        
+    }
+    
+    public static void method1(){
+        
+        System.out.println("method1 start...");
+        method2();
+        System.out.println("method1 End...");
+        
+    }
+    public static void method2(){
+        
+        System.out.println("method2 start...");
+        
+    
+    
+        
         Scanner sc = new Scanner(System.in);
         
-    try{
-        
-     
-        
+    try{        
         
         String[] vect = sc.nextLine().split(" ");
         int position = sc.nextInt();
@@ -29,6 +50,8 @@ public class NewMain {
     catch (ArrayIndexOutOfBoundsException e){
         
         System.out.println("posicao invalida");
+        e.printStackTrace();
+        sc.next();
     }
     
     catch (InputMismatchException e){
@@ -36,11 +59,10 @@ public class NewMain {
         System.out.println("input error");
     }
     
-        System.out.println("fim do programa");
-       
-        sc.close();
-      
-        
+            System.out.println("method2 end...");
+
+    
+      sc.close();
     }
     
 }
