@@ -34,7 +34,7 @@ public class UI {
 
     public static void clearScreen() {
 
-        System.out.print("\033[H\033[23");
+        System.out.print("\033[H\033[2j");
         System.out.flush();
 
     }
