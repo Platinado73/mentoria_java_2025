@@ -9,7 +9,6 @@ import chess.pieces.Knight;
 import chess.pieces.Pawn;
 import chess.pieces.Queen;
 import chess.pieces.Rook;
-import java.security.InvalidParameterException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -139,17 +138,17 @@ public class ChessMatch {
         }
 
         if (!type.equals("B") && !type.equals("N") && !type.equals("R") & !type.equals("Q")) {
-            throw new InvalidParameterException("Invalid type for promotion");
+            return promoted;
         }
 
         Position pos = promoted.getChessPosition().toPosion();
         Piece p = board.removePiece(pos);
         piecesOnTheBoard.remove(p);
-        
+
         ChessPiece newPiece = newPiece(type, promoted.getColor());
         board.placePiece(newPiece, pos);
         piecesOnTheBoard.add(newPiece);
-        
+
         return newPiece;
 
     }
